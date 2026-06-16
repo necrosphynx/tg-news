@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Aggregator - All Themes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>📰 News Aggregator</h1>
+        <p>Last updated: {{ last_built }}</p>
+    </header>
+    
+    <main>
+        <h2>News by Theme</h2>
+        <div class="theme-grid">
+            {% for theme in themes %}
+            <div class="theme-card">
+                <a href="{{ theme.lower().replace(' ', '_') }}.html">
+                    <h3>{{ theme }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+    <footer>
+        <p>Automatically updated every 6 hours via GitHub Actions</p>
+    </footer>
+</body>
+</html>
