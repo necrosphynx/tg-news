@@ -9,19 +9,31 @@
 <body>
     <header>
         <h1>📰 News Aggregator</h1>
-        <p>Last updated: {{ last_built }}</p>
+        <p>Last updated: 2026-06-16 13:46:09 UTC</p>
     </header>
     
     <main>
         <h2>News by Theme</h2>
         <div class="theme-grid">
-            {% for theme in themes %}
+            
             <div class="theme-card">
-                <a href="{{ theme.lower().replace(' ', '_') }}.html">
-                    <h3>{{ theme }}</h3>
+                <a href="technology.html">
+                    <h3>Technology</h3>
                 </a>
             </div>
-            {% endfor %}
+            
+            <div class="theme-card">
+                <a href="environment.html">
+                    <h3>Environment</h3>
+                </a>
+            </div>
+            
+            <div class="theme-card">
+                <a href="science.html">
+                    <h3>Science</h3>
+                </a>
+            </div>
+            
         </div>
     </main>
     
