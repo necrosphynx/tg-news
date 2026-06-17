@@ -24,6 +24,9 @@ feeds:
       - url: "https://variety.com/"
       - url: "https://www.rollingstone.com/feed/rss/"
       - url: "https://www.historytoday.com/history-todays-rss-feeds"
+      - url: "https://www.smithsonianmag.com/rss/smartnews-history-archaeology/"
+      - url: "https://feeds.bbci.co.uk/culture/rss.xml" #BBC Culture
+      - url: "https://www.historyhit.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.historyhit.com%2Farticles%2F&format=xml" #HistoryHit Read articles
 
   - name: "Overworld"
     sources:
