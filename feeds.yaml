@@ -7,6 +7,7 @@ feeds:
       - url: "https://www.cbsnews.com/latest/rss/technology"
       - url: "https://futurism.com/feed"
       - url: "https://feeds.feedburner.com/variety/news/technology"
+      - url: "https://www.reddit.com/r/technews/.rss"
       
   - name: "Environment"
     sources:
