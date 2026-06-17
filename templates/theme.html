@@ -3,32 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ theme }} News - News Aggregator</title>
+    <title>{{ theme }} News</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>{{ theme }} News</h1>
-        <p><a href="index.html">← Back to all themes</a> | Last updated: {{ last_built }}</p>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-link">← Back to Dashboard</a>
+                <h1 class="logo">{{ theme }}</h1>
+                <span class="update-time">{{ last_built }}</span>
+            </div>
+        </div>
     </header>
-    
-    <main>
-        {% if articles %}
+
+    <main class="container">
+        <!-- Statistics -->
+        <div class="stats-bar">
+            <span>📊 {{ articles|length }} articles</span>
+            <span>🏆 Top score: {{ articles[0].ranking_score|round(0)|int }}%</span>
+        </div>
+
+        <!-- Articles Grid - Sorted by Popularity -->
+        <div class="articles-grid">
             {% for article in articles %}
-            <article>
-                <h3><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h3>
-                <p class="meta">{{ article.published }} | {{ article.source }}</p>
-                <p>{{ article.summary[:200] }}{% if article.summary|length > 200 %}...{% endif %}</p>
-                <hr>
-            </article>
+            <div class="article-card rank-{{ article.rank }}">
+                <div class="rank-badge">#{{ article.rank }}</div>
+                <div class="card-content">
+                    <div class="article-header">
+                        <span class="source-tag">{{ article.source }}</span>
+                        <span class="score-tag">{{ article.ranking_score|round(0)|int }}%</span>
+                    </div>
+                    
+                    <h2><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h2>
+                    
+                    <p class="summary">{{ article.summary[:200] }}...</p>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-label">Recency</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: {{ article.rank_metrics.recency * 100 }}%"></div>
+                            </div>
+                            <span class="metric-value">{{ (article.rank_metrics.recency * 100)|round(0)|int }}%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Authority</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: {{ article.rank_metrics.source_authority * 100 }}%"></div>
+                            </div>
+                            <span class="metric-value">{{ (article.rank_metrics.source_authority * 100)|round(0)|int }}%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Quality</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: {{ article.rank_metrics.content_quality * 100 }}%"></div>
+                            </div>
+                            <span class="metric-value">{{ (article.rank_metrics.content_quality * 100)|round(0)|int }}%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="article-footer">
+                        <span class="date">{{ article.published }}</span>
+                        <a href="{{ article.link }}" target="_blank" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
             {% endfor %}
-        {% else %}
-            <p>No articles found for this theme.</p>
-        {% endif %}
+        </div>
     </main>
-    
-    <footer>
-        <p>Automatically aggregated from RSS feeds. Updates every 6 hours.</p>
+
+    <footer class="footer">
+        <div class="container">
+            <p>News Aggregator | {{ last_built }}</p>
+        </div>
     </footer>
 </body>
 </html>
