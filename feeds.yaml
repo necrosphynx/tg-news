@@ -19,6 +19,7 @@ feeds:
       - url: "https://www.science.org/rss/news_current.xml"
       - url: "https://www.nature.com/nature.rss"
       - url: "https://feeds.bbci.co.uk/news/rss.xml" #BBC
+      - url: "https://www.reddit.com/r/science/.rss"
 
   - name: "Entertainmen"
     sources:
@@ -51,3 +52,9 @@ feeds:
       - url: "https://semafor.com/rss.xml"
       - url: "https://www.reddit.com/r/anime_titties/.rss"
       - url: "https://rss.dw.com/rdf/rss-en-all"
+      - url: "https://www.reddit.com/r/worldnews/.rss"
+
+  - name: "Panorama"
+    sources:
+      - url: "https://www.reddit.com/r/nottheonion/.rss"
+      - url: "https://www.reddit.com/r/offbeat/.rss"
