@@ -55,6 +55,7 @@ feeds:
       - url: "https://www.reddit.com/r/anime_titties/.rss"
       - url: "https://rss.dw.com/rdf/rss-en-all"
       - url: "https://www.reddit.com/r/worldnews/.rss"
+      - url: "https://www.france24.com/en/rss"
 
   - name: "Panorama"
     sources:
