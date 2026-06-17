@@ -22,32 +22,31 @@ if sys.stdout.encoding != 'utf-8':
 SITE_DIR = "site"
 TEMPLATES_DIR = "templates"
 
+import re
+from html import unescape
+
 def clean_text(text):
     """Clean and properly encode text from RSS feeds"""
     if not text:
         return "No content available"
     
     # Handle HTML entities
-    text = html.unescape(text)
+    text = unescape(text)
+    
+    # Remove HTML tags
+    text = re.sub(r'<[^>]+>', '', text)
+    
+    # Remove extra whitespace
+    text = re.sub(r'\s+', ' ', text)
     
     # Remove invalid XML characters
     text = re.sub(r'[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]', '', text)
     
     # Replace common problematic Unicode characters
     replacements = {
-        '\u2018': "'",  # Left single quote
-        '\u2019': "'",  # Right single quote
-        '\u201C': '"',  # Left double quote
-        '\u201D': '"',  # Right double quote
-        '\u2013': '-',  # En dash
-        '\u2014': '-',  # Em dash
-        '\u2022': '*',  # Bullet
-        '\u2026': '...', # Ellipsis
-        '\u00A0': ' ',  # Non-breaking space
-        '\u00AB': '"',  # Left guillemet
-        '\u00BB': '"',  # Right guillemet
-        '\u2039': "'",  # Single left angle quote
-        '\u203A': "'",  # Single right angle quote
+        '\u2018': "'", '\u2019': "'", '\u201C': '"', '\u201D': '"',
+        '\u2013': '-', '\u2014': '-', '\u2022': '*', '\u2026': '...',
+        '\u00A0': ' ', '\u00AB': '"', '\u00BB': '"', '\u2039': "'", '\u203A': "'"
     }
     
     for unicode_char, replacement in replacements.items():
