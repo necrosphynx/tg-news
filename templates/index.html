@@ -3,6 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Dashboard - Top Stories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">📰 News Dashboard</h1>
+                <div class="header-right">
+                    <span class="update-time">Last updated: {{ last_built }}</span>
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <h2 class="section-title">🔥 Top Stories</h2>
+            <div class="featured-grid">
+                {% for article in top_articles[:3] %}
+                <div class="featured-card rank-{{ article.rank }}">
+                    <div class="featured-rank">#{{ article.rank }}</div>
+                    <div class="featured-content">
+                        <span class="featured-source">{{ article.source }}</span>
+                        <h3><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h3>
+                        <p class="featured-summary">{{ article.summary[:150] }}...</p>
+                        <div class="featured-meta">
+                            <span class="score">★ {{ article.ranking_score|round(0)|int }}%</span>
+                            <span class="recency">{{ article.rank_metrics.recency|round(2) }} recency</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Theme Grid Sections -->
+        <section class="themes-section">
+            <h2 class="section-title">📚 Browse by Category</h2>
+            <div class="theme-grid">
+                {% for theme in themes %}
+                <a href="{{ theme.lower().replace(' ', '_') }}.html" class="theme-card">
+                    <h3>{{ theme }}</h3>
+                    <span class="theme-arrow">→</span>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- All Articles by Theme -->
+        <section class="all-articles-section">
+            <h2 class="section-title">📖 All Stories</h2>
+            
+            {% for theme in themes %}
+            <div class="theme-section">
+                <div class="theme-header">
+                    <h3 class="theme-name">{{ theme }}</h3>
+                    <a href="{{ theme.lower().replace(' ', '_') }}.html" class="view-all">View all →</a>
+                </div>
+                
+                <div class="article-grid">
+                    {% set theme_articles = articles_by_theme[theme] %}
+                    {% for article in theme_articles[:6] %}
+                    <div class="article-card rank-{{ article.rank }}">
+                        <div class="article-rank">#{{ article.rank }}</div>
+                        <div class="article-content">
+                            <div class="article-source">{{ article.source }}</div>
+                            <h4><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h4>
+                            <div class="article-meta">
+                                <span class="score-badge">{{ article.ranking_score|round(0)|int }}%</span>
+                                <span class="article-date">{{ article.published[:16] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Built with ❤️ using Python | {{ last_built }}</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Aggregator - All Themes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
