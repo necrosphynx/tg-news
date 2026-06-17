@@ -56,6 +56,15 @@ feeds:
       - url: "https://rss.dw.com/rdf/rss-en-all"
       - url: "https://www.reddit.com/r/worldnews/.rss"
       - url: "https://www.france24.com/en/rss"
+      - url: "https://www.mediapart.fr/articles/feed"
+      - url: "https://www.parisstaronline.com/feed"
+      - url: "https://www.lemonde.fr/rss/une.xml"
+      - url: "https://japantoday.com/feed"
+      - url: "https://www.dailymail.co.uk/home/index.rss"
+      - url: "http://www.independent.co.uk/news/uk/rss"
+      - url: "https://www.huffpost.com/section/world-news/feed"
+      - url: "http://feeds.washingtonpost.com/rss/world"
+      - url: "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
 
   - name: "Panorama"
     sources:
