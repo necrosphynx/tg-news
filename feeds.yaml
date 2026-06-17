@@ -23,7 +23,7 @@ feeds:
       - url: "https://feeds.bbci.co.uk/news/rss.xml" #BBC
       - url: "https://www.reddit.com/r/science/.rss"
 
-  - name: "Entertainmen"
+  - name: "Entertainment"
     sources:
       - url: "https://feeds.feedburner.com/variety/news/film"
       - url: "https://feeds.feedburner.com/variety/news/international"
