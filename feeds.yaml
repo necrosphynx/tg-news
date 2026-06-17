@@ -4,6 +4,8 @@ feeds:
       - url: "https://techcrunch.com/feed/"
       - url: "https://www.theverge.com/rss/index.xml"
       - url: "https://arstechnica.com/feed/"
+      - url: "https://www.cbsnews.com/latest/rss/technology"
+      - url: "https://futurism.com/feed"
       
   - name: "Environment"
     sources:
@@ -13,4 +15,22 @@ feeds:
   - name: "Science"
     sources:
       - url: "https://www.sciencedaily.com/rss/all.xml"
+      - url: "https://www.science.org/rss/news_current.xml"
       - url: "https://www.nature.com/nature.rss"
+      - url: "https://feeds.bbci.co.uk/news/rss.xml" #BBC
+
+  - name: "Movies & Art"
+    sources:
+      - url: "https://variety.com/"
+      - url: "https://www.rollingstone.com/feed/rss/"
+
+  - name: "Overworld"
+    sources:
+      - url: "https://feedx.net/rss/ap.xml" #APNews
+      - url: "https://www.theguardian.com/world/rss"
+      - url: "https://www.theguardian.com/opinion/rss"
+      - url: "https://feeds.npr.org/1001/rss.xml"
+      - url: "https://feeds.npr.org/35/rss.xml"
+      - url: "https://www.cbsnews.com/latest/rss/main"
+      - url: "https://www.cbsnews.com/latest/rss/world"
+      - url: "https://thehill.com/feed/"
