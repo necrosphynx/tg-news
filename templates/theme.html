@@ -21,10 +21,16 @@
         <!-- Statistics -->
         <div class="stats-bar">
             <span>📊 {{ articles|length }} articles</span>
+            {% if articles %}
             <span>🏆 Top score: {{ articles[0].ranking_score|round(0)|int }}%</span>
+            <span>🔥 Most recent: {{ articles[0].published[:16] }}</span>
+            {% else %}
+            <span>⚠️ No articles available for this category</span>
+            {% endif %}
         </div>
 
         <!-- Articles Grid - Sorted by Popularity -->
+        {% if articles %}
         <div class="articles-grid">
             {% for article in articles %}
             <div class="article-card rank-{{ article.rank }}">
@@ -37,7 +43,7 @@
                     
                     <h2><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h2>
                     
-                    <p class="summary">{{ article.summary[:200] }}...</p>
+                    <p class="summary">{{ article.summary|striptags|truncate(200) }}</p>
                     
                     <div class="metrics-grid">
                         <div class="metric-item">
@@ -71,6 +77,12 @@
             </div>
             {% endfor %}
         </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No articles found for this category.</p>
+            <p>Check your feed URLs or try again later.</p>
+        </div>
+        {% endif %}
     </main>
 
     <footer class="footer">
