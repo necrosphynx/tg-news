@@ -8,6 +8,7 @@ feeds:
       - url: "https://futurism.com/feed"
       - url: "https://feeds.feedburner.com/variety/news/technology"
       - url: "https://www.reddit.com/r/technews/.rss"
+      - url: "https://www.reddit.com/r/technology/.rss"
       
   - name: "Environment"
     sources:
