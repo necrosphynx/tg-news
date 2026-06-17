@@ -3,7 +3,7 @@ feeds:
     sources:
       - url: "https://techcrunch.com/feed/"
       - url: "https://www.theverge.com/rss/tech/index.xml"
-      - url: "https://arstechnica.com/feed/"
+      - url: "https://arstechnica.com/feed"
       - url: "https://www.cbsnews.com/latest/rss/technology"
       - url: "https://futurism.com/feed"
       - url: "https://feeds.feedburner.com/variety/news/technology"
@@ -20,12 +20,14 @@ feeds:
       - url: "https://www.nature.com/nature.rss"
       - url: "https://feeds.bbci.co.uk/news/rss.xml" #BBC
 
-  - name: "Movies & Art"
+  - name: "Entertainmen"
     sources:
       - url: "https://feeds.feedburner.com/variety/news/film"
       - url: "https://feeds.feedburner.com/variety/news/international"
       - url: "https://feeds.feedburner.com/VarietyFestivalNews"
       - url: "https://www.rollingstone.com/feed/rss/"
+      - url: "https://www.theverge.com/rss/entertainment/index.xml"
+      - url: "https://arstechnica.com/feed/culture"
 
   - name: "History"
     sources:
