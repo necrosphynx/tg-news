@@ -38,3 +38,5 @@ feeds:
       - url: "https://www.cbsnews.com/latest/rss/main"
       - url: "https://www.cbsnews.com/latest/rss/world"
       - url: "https://thehill.com/feed/"
+      - url: "https://semafor.com/rss.xml"
+      - url: "https://www.reddit.com/r/anime_titties/.rss"
