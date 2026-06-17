@@ -19,10 +19,11 @@ feeds:
       - url: "https://www.nature.com/nature.rss"
       - url: "https://feeds.bbci.co.uk/news/rss.xml" #BBC
 
-  - name: "Movies & Art"
+  - name: "Movies, Art and History"
     sources:
       - url: "https://variety.com/"
       - url: "https://www.rollingstone.com/feed/rss/"
+      - url: "https://www.historytoday.com/history-todays-rss-feeds"
 
   - name: "Overworld"
     sources:
