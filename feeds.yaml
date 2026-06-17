@@ -2,7 +2,7 @@ feeds:
   - name: "Technology"
     sources:
       - url: "https://techcrunch.com/feed/"
-      - url: "https://www.theverge.com/rss/index.xml"
+      - url: "https://www.theverge.com/rss/tech/index.xml"
       - url: "https://arstechnica.com/feed/"
       - url: "https://www.cbsnews.com/latest/rss/technology"
       - url: "https://futurism.com/feed"
