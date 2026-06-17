@@ -6,6 +6,7 @@ feeds:
       - url: "https://arstechnica.com/feed/"
       - url: "https://www.cbsnews.com/latest/rss/technology"
       - url: "https://futurism.com/feed"
+      - url: "https://feeds.feedburner.com/variety/news/technology"
       
   - name: "Environment"
     sources:
@@ -19,15 +20,21 @@ feeds:
       - url: "https://www.nature.com/nature.rss"
       - url: "https://feeds.bbci.co.uk/news/rss.xml" #BBC
 
-  - name: "Movies, Art and History"
+  - name: "Movies & Art"
     sources:
-      - url: "https://variety.com/"
+      - url: "https://feeds.feedburner.com/variety/news/film"
+      - url: "https://feeds.feedburner.com/variety/news/international"
+      - url: "https://feeds.feedburner.com/VarietyFestivalNews"
       - url: "https://www.rollingstone.com/feed/rss/"
+
+  - name: "History"
+    sources:
       - url: "https://www.historytoday.com/history-todays-rss-feeds"
       - url: "https://www.smithsonianmag.com/rss/smartnews-history-archaeology/"
       - url: "https://feeds.bbci.co.uk/culture/rss.xml" #BBC Culture
       - url: "https://www.historyhit.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.historyhit.com%2Farticles%2F&format=xml" #HistoryHit Read articles
       - url: "https://www.reddit.com/r/todayilearned/.rss"
+
 
   - name: "Overworld"
     sources:
