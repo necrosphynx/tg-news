@@ -1,0 +1,15 @@
+{% macro article_card(article, show_rank=True) %}
+<div class="article-card rank-{{ article.rank }}">
+    {% if show_rank %}
+    <div class="article-rank">#{{ article.rank }}</div>
+    {% endif %}
+    <div class="article-content">
+        <div class="article-source">{{ article.source }}</div>
+        <h4><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h4>
+        <div class="article-meta">
+            <span class="score-badge">{{ article.ranking_score|round(0)|int }}%</span>
+            <span class="article-date">{{ article.published[:16] }}</span>
+        </div>
+    </div>
+</div>
+{% endmacro %}
