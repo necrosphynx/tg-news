@@ -33,11 +33,15 @@ feeds:
       - url: "https://www.theverge.com/rss/entertainment/index.xml"
       - url: "https://arstechnica.com/feed/culture"
 
+  - name: "Art"
+    sources:
+      - url: "https://www.artnews.com/feed/rss/"
+      - url: "https://feeds.bbci.co.uk/culture/art/rss.xml"
+
   - name: "History"
     sources:
       - url: "https://www.historytoday.com/history-todays-rss-feeds"
       - url: "https://www.smithsonianmag.com/rss/smartnews-history-archaeology/"
-      - url: "https://feeds.bbci.co.uk/culture/rss.xml" #BBC Culture
       - url: "https://www.historyhit.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.historyhit.com%2Farticles%2F&format=xml" #HistoryHit Read articles
       - url: "https://old.reddit.com/r/todayilearned/.rss"
 
